@@ -12,7 +12,6 @@ import { connect } from 'http2';
       >
         <slot />
         <div
-          ref="close"
           class="close"
           @click="$emit('x')"
         ></div>
@@ -38,9 +37,6 @@ export default {
     this.setting.autoCancel
       ? setTimeout(() => this.$emit("x"), this.setting.wateTime)
       : "";
-    this.$nextTick(() => {
-      console.log(this.$refs.close.getComputedStyle(""));
-    });
   }
 };
 </script>

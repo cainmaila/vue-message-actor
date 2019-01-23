@@ -12,18 +12,19 @@
     <script src="./dist/vue-message-actor.js"></script>
     <script>
         Vue.use(VueMessageActor)
-    var app = new Vue({
-    el: '#app',
-        data: {
-            message: 'Hello Vue!'
-        }
-    })
-    app.$pushMessage('Hello Vue!', {
-            autoCancel: false,
-            bgStyle: '#f00',
-            messageColor: '#0f0'
+        var app = new Vue({
+        el: '#app',
+            data: {
+                message: 'Hello Vue!'
+            }
         })
-    app.$pushMessage('Hello Vue!', )
+        app.$pushMessage('Hello VueMessageActor 預設值!')
+        app.$pushMessage('Hello VueMessageActor 自定義!', {
+                autoCancel: false,
+                bgStyle: '#f00',
+                messageColor: '#0f0'
+        })
+        
     </script>
 </body>
 </html>
