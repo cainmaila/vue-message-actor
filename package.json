@@ -1,7 +1,8 @@
 {
 	"name": "vue-message-actor",
+	"author": "cainmaila@gmail.com",
 	"version": "1.0.0",
-	"main": "src/index.js",
+	"main": "dist/vue-message-actor.min.js",
 	"license": "MIT",
 	"devDependencies": {
 		"@babel/core": "^7.2.2",
@@ -20,5 +21,10 @@
 	"scripts": {
 		"dev": "rollup -w -c",
 		"build": "set NODE_ENV=production && rollup -c"
-	}
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/cainmaila/vue-message-actor"
+	},
+	"keywords": ["vue"]
 }
