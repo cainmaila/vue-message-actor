@@ -1,4 +1,5 @@
 <!--  -->
+import { connect } from 'http2';
 <template>
   <transition name="ain">
     <div class="item">
@@ -11,9 +12,10 @@
       >
         <slot />
         <div
+          ref="close"
           class="close"
           @click="$emit('x')"
-        >X</div>
+        ></div>
       </div>
     </div>
   </transition>
@@ -36,6 +38,9 @@ export default {
     this.setting.autoCancel
       ? setTimeout(() => this.$emit("x"), this.setting.wateTime)
       : "";
+    this.$nextTick(() => {
+      console.log(this.$refs.close.getComputedStyle(""));
+    });
   }
 };
 </script>
@@ -49,10 +54,12 @@ export default {
 .meg {
   position: absolute;
   top: 0px;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-width: 300px;
   height: 25px;
-  padding: 0px 20px;
+  padding: 0px 40px 0px 20px;
   background: #000c;
   color: #fff;
   font-size: 14px;
@@ -67,6 +74,17 @@ export default {
   top: 1px;
   color: #fff;
   cursor: pointer;
+}
+
+.close:before {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: "\2715"; /* use the hex value here... */
+  color: attr(data-attr);
+  line-height: 25px;
+  text-align: center;
 }
 .ain-enter-active,
 .ain-leave-active {

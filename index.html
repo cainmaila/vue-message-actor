@@ -11,14 +11,19 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
     <script src="./dist/vue-message-actor.js"></script>
     <script>
-        Vue.use(VueMessageActor,{ autoCancel:false})
+        Vue.use(VueMessageActor)
     var app = new Vue({
     el: '#app',
         data: {
             message: 'Hello Vue!'
         }
     })
-    app.$pushMessage('xxxxxx')
+    app.$pushMessage('Hello Vue!', {
+            autoCancel: false,
+            bgStyle: '#f00',
+            messageColor: '#0f0'
+        })
+    app.$pushMessage('Hello Vue!', )
     </script>
 </body>
 </html>
