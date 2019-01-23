@@ -9,7 +9,7 @@
 <body>
     <div id="app">{{message}}</div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
-    <script src="./dist/vue-message-actor.js"></script>
+    <script src="./dist/vue-message-actor.min.js"></script>
     <script>
         Vue.use(VueMessageActor)
         var app = new Vue({
@@ -19,12 +19,14 @@
             }
         })
         app.$pushMessage('Hello VueMessageActor 預設值!')
-        app.$pushMessage('Hello VueMessageActor 自定義!', {
+
+        setTimeout(()=>{
+            app.$pushMessage('Hello VueMessageActor 自定義!', {
                 autoCancel: false,
                 bgStyle: '#f00',
                 messageColor: '#0f0'
-        })
-        
+            })
+        },2000)
     </script>
 </body>
 </html>

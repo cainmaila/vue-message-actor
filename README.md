@@ -5,7 +5,7 @@
 基本用法
 ```js
 import VueMessageActor from "vue-message-actor";
-// or <script src="./vue-message-actor.js"></script>
+// or <script src="./vue-message-actor.min.js"></script>
 
 Vue.use(VueMessageActor)
 /* 送出訊息*/
@@ -31,3 +31,5 @@ vm.$pushMessage('Hello VueMessageActor!',,{
     messageColor: '#fff' /* 文字色 預設#fff*/
 })
 ```
+
+## 範例請見 demo.html

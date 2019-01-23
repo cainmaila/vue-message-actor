@@ -5,7 +5,7 @@ export default {
 	input: 'src/index.js',
 	output: {
 		name: 'VueMessageActor',
-		file: 'dist/vue-message-actor.js',
+		file: 'dist/vue-message-actor.min.js',
 		format: 'umd',
 		globals: {}
 	},
