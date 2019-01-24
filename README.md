@@ -34,4 +34,4 @@ vm.$pushMessage('Hello VueMessageActor!',,{
 })
 ```
 
-## 範例請見 (https://cainmaila.github.io/vue-message-actor)[https://cainmaila.github.io/vue-message-actor]
+## 範例請見 (https://cainmaila.github.io/vue-message-actor/index.html)[https://cainmaila.github.io/vue-message-actor/index.html]
