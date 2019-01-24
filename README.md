@@ -1,5 +1,7 @@
 # Vue 推播訊息組件
 
+輕巧簡單的 Vue 訊息掛件
+
 ## 使用方式
 
 基本用法
@@ -32,4 +34,4 @@ vm.$pushMessage('Hello VueMessageActor!',,{
 })
 ```
 
-## 範例請見 demo.html
+## 範例請見 (https://cainmaila.github.io/vue-message-actor)[https://cainmaila.github.io/vue-message-actor]

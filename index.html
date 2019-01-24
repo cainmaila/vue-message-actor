@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+    .m10{
+        margin:10px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container" id="app">
+        <h1>{{til}}</h1>
+        <div class="m10">
+            <button class="m10 btn btn-lg btn-danger" @click="ckDef">Default theme</button>
+            <button class="m10 btn btn-lg btn-info" @click="ckCus">Custom theme</button>
+        </div>
+        <div  class="m10">
+                <input type="text" class="form-control" placeholder="Message" v-model="message">
+            </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+    <script src="./dist/vue-message-actor.min.js"></script>
+    <script>
+        Vue.use(VueMessageActor)
+        var app = new Vue({
+        el: '#app',
+            data: {
+                til: 'vue-message-actor Demo !',
+                message:'post message !'
+            },
+            methods: {
+                ckDef(){
+                    this.$pushMessage(this.message)
+                },
+                ckCus(){
+                    this.$pushMessage(this.message, {
+                    autoCancel: false,
+                    bgStyle: '#52B2C5',
+                    messageColor: 'rgb(0, 82, 101)'
+                })
+                }
+            },
+        })
+    </script>
+</body>
+</html>

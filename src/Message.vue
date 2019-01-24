@@ -12,7 +12,7 @@ import { connect } from 'http2';
       >
         <slot />
         <div
-          class="close"
+          class="close-x"
           @click="$emit('x')"
         ></div>
       </div>
@@ -64,7 +64,7 @@ export default {
   pointer-events: auto;
   transform: translateX(-50%);
 }
-.close {
+.close-x {
   position: absolute;
   right: 10px;
   top: 1px;
@@ -72,13 +72,14 @@ export default {
   cursor: pointer;
 }
 
-.close:before {
+.close-x:before {
+  font-family: 'Courier New', Courier, monospace;
+  color:#fff;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   content: "\2715"; /* use the hex value here... */
-  color: attr(data-attr);
   line-height: 25px;
   text-align: center;
 }
