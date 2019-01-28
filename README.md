@@ -1,37 +1,41 @@
-# Vue 推播訊息組件
+# Vue message component plugin
 
-輕巧簡單的 Vue 訊息掛件
+[![npm version](https://badge.fury.io/js/vue-message-actor.svg)](https://badge.fury.io/js/vue-message-actor)
 
-## 使用方式
+lightweight and simple Vue message component plugin
 
-基本用法
+## [Demo](https://cainmaila.github.io/vue-message-actor/index.html)
+
+## How to use
+
+Basic usage
 ```js
 import VueMessageActor from "vue-message-actor";
-// or <script src="./vue-message-actor.min.js"></script>
+// or <script src="./dist/vue-message-actor.min.js"></script>
 
 Vue.use(VueMessageActor)
-/* 送出訊息*/
+/* push message */
 vm.$pushMessage('Hello VueMessageActor!')
+//or this.$pushMessage('Hello VueMessageActor!')
 ```
 
-設定預設值
+set default style
 ```js
 Vue.use(VueMessageActor,{
-    autoCancel: true /* 自動退出 預設 true*/,
-    wateTime: 5000 /* 等待退出時間，autoCancel=true才會生效 預設 5秒*/,
-    bgStyle: '#000' /* 背景色 預設#000 */,
-    messageColor: '#fff' /* 文字色 預設#fff*/
+    autoCancel: true /* auto exit. default true*/,
+    wateTime: 5000 /* Waiting for exit time. autoCancel=true default 5s */,
+    bgStyle: '#000' /* Background color. default #000 */,
+    messageColor: '#fff' /* Text color. default #fff*/
 })
 ```
 
-針對送出的訊息做設定
+Make settings for the sent message
 ```js
-vm.$pushMessage('Hello VueMessageActor!',,{
-    autoCancel: true /* 自動退出 預設 true*/,
-    wateTime: 5000 /* 等待退出時間，autoCancel=true才會生效 預設 5秒*/,
-    bgStyle: '#000' /* 背景色 預設#000 */,
-    messageColor: '#fff' /* 文字色 預設#fff*/
+vm.$pushMessage('Hello VueMessageActor!',{
+    autoCancel: true /* auto exit. default true*/,
+    wateTime: 5000  /* Waiting for exit time. autoCancel=true default 5s */,
+    bgStyle: '#000'  /* Background color. default #000 */,
+    messageColor: '#fff'/* Text color. default #fff*/
 })
 ```
 
-## 範例請見 [範例 Demo](https://cainmaila.github.io/vue-message-actor/index.html)
