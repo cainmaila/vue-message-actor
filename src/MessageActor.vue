@@ -2,49 +2,55 @@
 <template>
   <div id="MessageActor">
     <Message
-      v-for="(message,index) in messageQueue"
+      v-for="(message, index) in messageQueue"
       :key="message.key"
       :ind="index"
       :setting="message.setting"
       @x="close(index)"
-    >{{ message.meg }}</Message>
+      >{{ message.meg }}</Message
+    >
   </div>
 </template>
 
 <script>
-import Message from "./Message.vue";
+import Message from './Message.vue'
 
 export default {
-  name: "MessageActor",
+  name: 'MessageActor',
   components: {
-    Message
+    Message,
   },
   props: {
     setting: {
       type: Object,
-      default: null
-    }
+      default: null,
+    },
   },
   data() {
     return {
+      lastMessage: '',
       messageQueue: [],
-      key: 0
-    };
+      key: 0,
+    }
   },
   methods: {
-    pushMessage(meg = "", setting = {}) {
-      this.key += 1;
+    pushMessage(msg = '', setting = {}) {
+      this.key += 1
       setting = {
         ...this.setting,
-        ...setting
-      };
-      this.messageQueue.push({ meg, key: this.key, setting });
+        ...setting,
+      }
+      if (msg != this.lastMessage) {
+        /* Do not send repeatedly */
+        this.lastMessage = msg
+        this.messageQueue.push({ msg, key: this.key, setting })
+      }
     },
     close(ind) {
-      this.messageQueue.splice(ind, 1);
-    }
-  }
-};
+      this.messageQueue.splice(ind, 1)
+    },
+  },
+}
 </script>
 
 <style>

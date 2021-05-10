@@ -6,15 +6,12 @@ import { connect } from 'http2';
       <div
         class="meg"
         :style="{
-          background:setting.bgStyle,
-          color:setting.messageColor,
+          background: setting.bgStyle,
+          color: setting.messageColor,
         }"
       >
         <slot />
-        <div
-          class="close-x"
-          @click="$emit('x')"
-        ></div>
+        <div class="close-x" @click="$emit('x')"></div>
       </div>
     </div>
   </transition>
@@ -22,23 +19,26 @@ import { connect } from 'http2';
 
 <script>
 export default {
-  name: "Message",
+  name: 'Message',
   props: {
     ind: {
       type: Number,
-      default: 0
+      default: 0,
     },
     setting: {
       type: Object,
-      default: null
-    }
+      default: null,
+    },
   },
   mounted() {
     this.setting.autoCancel
-      ? setTimeout(() => this.$emit("x"), this.setting.wateTime)
-      : "";
-  }
-};
+      ? setTimeout(
+          () => this.$emit('x'),
+          this.setting.wateTime || this.setting.waitTime,
+        )
+      : ''
+  },
+}
 </script>
 
 <style scoped>
@@ -74,12 +74,12 @@ export default {
 
 .close-x:before {
   font-family: 'Courier New', Courier, monospace;
-  color:#fff;
+  color: #fff;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  content: "\2715"; /* use the hex value here... */
+  content: '\2715'; /* use the hex value here... */
   line-height: 25px;
   text-align: center;
 }

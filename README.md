@@ -9,8 +9,9 @@ lightweight and simple Vue message component plugin
 ## How to use
 
 Basic usage
+
 ```js
-import VueMessageActor from "vue-message-actor";
+import VueMessageActor from 'vue-message-actor'
 // or <script src="./dist/vue-message-actor.min.js"></script>
 
 Vue.use(VueMessageActor)
@@ -20,22 +21,23 @@ vm.$pushMessage('Hello VueMessageActor!')
 ```
 
 set default style
+
 ```js
-Vue.use(VueMessageActor,{
-    autoCancel: true /* auto exit. default true*/,
-    wateTime: 5000 /* Waiting for exit time. autoCancel=true default 5s */,
-    bgStyle: '#000' /* Background color. default #000 */,
-    messageColor: '#fff' /* Text color. default #fff*/
+Vue.use(VueMessageActor, {
+  autoCancel: true /* auto exit. default true*/,
+  waitTime: 5000 /* Waiting for exit time. autoCancel=true default 5s */,
+  bgStyle: '#000' /* Background color. default #000 */,
+  messageColor: '#fff' /* Text color. default #fff*/,
 })
 ```
 
 Make settings for the sent message
+
 ```js
-vm.$pushMessage('Hello VueMessageActor!',{
-    autoCancel: true /* auto exit. default true*/,
-    wateTime: 5000  /* Waiting for exit time. autoCancel=true default 5s */,
-    bgStyle: '#000'  /* Background color. default #000 */,
-    messageColor: '#fff'/* Text color. default #fff*/
+vm.$pushMessage('Hello VueMessageActor!', {
+  autoCancel: true /* auto exit. default true*/,
+  waitTime: 5000 /* Waiting for exit time. autoCancel=true default 5s */,
+  bgStyle: '#000' /* Background color. default #000 */,
+  messageColor: '#fff' /* Text color. default #fff*/,
 })
 ```
-
