@@ -32,10 +32,7 @@ export default {
   },
   mounted() {
     this.setting.autoCancel
-      ? setTimeout(
-          () => this.$emit('x'),
-          this.setting.wateTime || this.setting.waitTime,
-        )
+      ? setTimeout(() => this.$emit('x'), this.setting.waitTime)
       : ''
   },
 }

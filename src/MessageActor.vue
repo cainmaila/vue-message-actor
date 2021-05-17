@@ -14,7 +14,7 @@
 
 <script>
 import Message from './Message.vue'
-
+let _timeTmp = 0
 export default {
   name: 'MessageActor',
   components: {
@@ -39,11 +39,17 @@ export default {
       setting = {
         ...this.setting,
         ...setting,
+        waitTime: setting.waitTime || setting.wateTime, //fix 上一個版本的失誤
       }
       if (msg != this.lastMessage) {
         /* Do not send repeatedly */
         this.lastMessage = msg
         this.messageQueue.push({ msg, key: this.key, setting })
+        clearTimeout(_timeTmp)
+        this.lastMessage = msg
+        _timeTmp = setTimeout(() => {
+          this.lastMessage = null
+        })
       }
     },
     close(ind) {
